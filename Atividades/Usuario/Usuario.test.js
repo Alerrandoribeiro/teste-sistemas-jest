@@ -253,4 +253,29 @@ describe("", () => {
 
     expect(sucesso).toBe(false);
   });
+
+  test("Cenário 1: Testando cadastro de usuario", () => {
+    const novoUsuario = new User(
+      "123.456.789-00",
+      "João da Silva",
+      "joao.silva@email.com",
+      "SenhaForte123",
+      "SenhaForte123",
+      "01001-000"
+    );
+    expect(novoUsuario).toBeDefined();
+    console.log("Usuário Cadastrado");
+  });
+
+  test("Cenário 2: Testando se a senha e confirmação não são iguais", () => {
+    
+    expect(() => new User(
+      "987.654.321-99",
+      "Maria Oliveira",
+      "maria.oliveira@email.com",
+      "MinhaSenha456",
+      "MinhaSenha457",
+      "20040-020"
+    )).toThrow("As senhas não coincidem.");
+  });
 });
