@@ -278,4 +278,16 @@ describe("", () => {
       "20040-020"
     )).toThrow("As senhas não coincidem.");
   });
+
+  test("Cenário 3 - Testando campo vazio nome", () => {
+    
+    expect(() => new User(
+      "987.654.321-99",
+      "",
+      "maria.oliveira@email.com",
+      "MinhaSenha456",
+      "MinhaSenha457",
+      "20040-020"
+    )).toThrow("Todos os campos são obrigatórios.");
+  });
 });
