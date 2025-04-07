@@ -35,4 +35,4 @@ class GeometriaService {
     }
 }
 
-module.exports = GeometriaService;
+    module.exports = GeometriaService;
