@@ -52,7 +52,7 @@ class User {
     }
 
     validateCNPJ(cnpj) {
-        cnpj = cnpj.replace(/[.-\/]/g, "");
+        cnpj = cnpj.replace(/[^\d]/g, "");
         if (cnpj.length !== 14 || /^(\d)\1{13}$/.test(cnpj)) return false;
         
         return true;
